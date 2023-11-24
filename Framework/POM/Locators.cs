@@ -21,6 +21,11 @@ namespace Framework.POM
             internal static string ClickKlasika = "(//*[@href ='https://www.knygos.lt/lt/knygos/zanras/klasika/'])[2]";
             internal static string ClickBook = "//*[@data-cta-product-id='15534400']";
             internal static string GetPirktiTitle = "//*[@id='add_to_cart_single_add_to_cart_book2']";
+            internal static string EnterBookName = "//*[@id='product-search']";
+            internal static string ClickSearch = "//*[@class='ico-search']";
+            internal static string ClickToBook = "(//*[@data-cta-product-id='15534400'])[1]";
+            internal static string ClickHeart = "(//*[@id='wishlist-action'])[2]";
+
         }
         internal class Subscribe
         {

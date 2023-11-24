@@ -17,7 +17,6 @@ namespace Framework.POM
             Common.ClickElement(Locators.Login.ClickPrisijungti);
         }
 
-
         public static void EnterElPastoAdresas(string ElPastas)
         {
             Common.SendKeysToElement(Locators.Login.EnterElPastoAdresas, ElPastas);

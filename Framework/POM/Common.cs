@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System;
 
 namespace Framework.POM
 {
@@ -27,6 +28,11 @@ namespace Framework.POM
         internal static string GetLoginTitle(string getLoginTitle)
         {
             return GetElement(getLoginTitle).Text;
+        }
+
+        internal static string GetPirktiTitle(string getPirktiTitle)
+        {
+            return GetElement(getPirktiTitle).Text;
         }
     }
 }

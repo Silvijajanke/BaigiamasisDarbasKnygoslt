@@ -52,5 +52,10 @@ namespace Framework
         {
             return driver.Title;
         }
+
+        public static string GetRedHeart()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

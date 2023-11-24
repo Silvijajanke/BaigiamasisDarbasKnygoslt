@@ -1,6 +1,7 @@
 ﻿using Framework;
 using Framework.POM;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace Tests
 {
