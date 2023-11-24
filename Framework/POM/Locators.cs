@@ -22,5 +22,12 @@ namespace Framework.POM
             internal static string ClickBook = "//*[@data-cta-product-id='15534400']";
             internal static string GetPirktiTitle = "//*[@id='add_to_cart_single_add_to_cart_book2']";
         }
+        internal class Subscribe
+        {
+            internal static string EnterElPastoAdresas = "//*[@id='mce-EMAIL']";
+            internal static string ClickSutinkuGautiBendroPobudzioLaiskus = "//*[@id='gdpr_1']";
+            internal static string ClickSutinkuGautiPasiulymusIrPaklausimus = "//*[@id='gdpr_9']";
+            internal static string ClickButtonPrenumeruoti = "//*[@id='mc-embedded-subscribe']";
+        }
     }
 }

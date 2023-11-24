@@ -5,7 +5,7 @@ namespace Tests
 {
     internal class LoginTest
     {
-        internal class LoginScenario: BaseTests
+        internal class LoginScenario : BaseTests
         {
             [Test]
             public void Login()
