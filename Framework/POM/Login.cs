@@ -5,26 +5,26 @@ namespace Framework.POM
     {
         public static void ClickButtonDeclineCookies()
         {
-            Common.ClickElement(Locators.Login.ClickButtonDeclineCookies);
+            Common.ClickElement(Locators.Login.ButtonDeclineCookies);
         }
         public static void ClickButtonPrisijungtiRegistruotis()
         {
-            Common.ClickElement(Locators.Login.ClickButtonPrisijungtiRegistruotis);
+            Common.ClickElement(Locators.Login.PrisijungtiRegistruotis);
         }
 
         public static void ClickPrisijungti()
         {
-            Common.ClickElement(Locators.Login.ClickPrisijungti);
+            Common.ClickElement(Locators.Login.Prisijungti);
         }
 
         public static void EnterElPastoAdresas(string ElPastas)
         {
-            Common.SendKeysToElement(Locators.Login.EnterElPastoAdresas, ElPastas);
+            Common.SendKeysToElement(Locators.Login.InputElPastoAdresas, ElPastas);
         }
 
         public static void EnterSlaptazodis(string slaptazodis)
         {
-            Common.SendKeysToElement(Locators.Login.EnterSlaptazodis, slaptazodis);
+            Common.SendKeysToElement(Locators.Login.InputSlaptazodis, slaptazodis);
         }
 
         public static void Open()
@@ -33,7 +33,7 @@ namespace Framework.POM
         }
         public static string GetLoginTitle()
         {
-            return Common.GetElementText(Locators.Login.GetLoginTitle);
+            return Common.GetElementText(Locators.Login.OutputLoginTitle);
         }
     }
 }

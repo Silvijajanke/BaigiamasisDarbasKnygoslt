@@ -8,56 +8,56 @@ namespace Framework.POM
     {
         public static void ClickBook()
         {
-            Common.ClickElement(Locators.ProductList.ClickBook);
+            Common.ClickElement(Locators.ProductList.Book);
         }
 
         public static void ClickGrozineLiteratura()
         {
-            Common.ClickElement(Locators.ProductList.ClickGrozineLiteratura);
+            Common.ClickElement(Locators.ProductList.GrozineLiteratura);
         }
 
         public static void ClickHeart()
         {
-            Common.ClickElement(Locators.ProductList.ClickHeart);
+            Common.ClickElement(Locators.ProductList.HeartIcon);
         }
 
         public static void ClickIeskokite()
         {
-            Common.ClickElement(Locators.ProductList.ClickSearch);
+            Common.ClickElement(Locators.ProductList.Search);
         }
 
         public static void ClickKlasika()
         {
-            Common.ClickElement(Locators.ProductList.ClickKlasika);
+            Common.ClickElement(Locators.ProductList.Klasika);
         }
 
         public static void ClickSearch()
         {
-            Common.ClickElement(Locators.ProductList.ClickSearch);
+            Common.ClickElement(Locators.ProductList.Search);
         }
 
         public static void ClickToBook()
         {
-            Common.ClickElement(Locators.ProductList.ClickToBook);
+            Common.ClickElement(Locators.ProductList.ToBook);
         }
 
         public static void ClickVisosKnygos()
         {
-            Common.ClickElement(Locators.ProductList.ClickVisosKnygos);
+            Common.ClickElement(Locators.ProductList.VisosKnygos);
         }
 
         public static void EnterBookName(string bookName)
         {
-            Common.SendKeysToElement(Locators.ProductList.EnterBookName, bookName);
+            Common.SendKeysToElement(Locators.ProductList.InputBookName, bookName);
         }
 
         public static string GetPirktiTitle()
         {
-            return Common.GetElement(Locators.ProductList.GetPirktiTitle, "");
+            return Common.GetElement(Locators.ProductList.OutputPirktiTitle, "");
         }
         public static string GetRedHeart()
         {
-            return Common.GetElement(Locators.ProductList.ClickHeart, "color");
+            return Common.GetElement(Locators.ProductList.HeartIcon, "color");
         }
     }
 }

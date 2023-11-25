@@ -52,6 +52,7 @@
     <Compile Include="LoginTest.cs" />
     <Compile Include="ProductListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellYourBookTest.cs" />
     <Compile Include="SubscribeTest.cs" />
   </ItemGroup>
   <ItemGroup>

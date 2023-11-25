@@ -59,6 +59,7 @@
     <Compile Include="POM\Locators.cs" />
     <Compile Include="POM\Login.cs" />
     <Compile Include="POM\ProductList.cs" />
+    <Compile Include="POM\SellYourBook.cs" />
     <Compile Include="POM\Subscribe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
