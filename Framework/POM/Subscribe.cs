@@ -6,19 +6,19 @@ namespace Framework.POM
     {
         public static void EnterElPastoAdresas(string ElPastas)
         {
-            Common.SendKeysToElement(Locators.Subscribe.EnterElPastoAdresas, ElPastas);
+            Common.SendKeysToElement(Locators.Subscribe.InputElPastoAdresas, ElPastas);
         }
         public static void ClickSutinkuGautiBendroPobudzioLaiskus()
         {
-            Common.ClickElement(Locators.Subscribe.ClickSutinkuGautiBendroPobudzioLaiskus);
+            Common.ClickElement(Locators.Subscribe.SutinkuGautiBendroPobudzioLaiskus);
         }
         public static void ClickSutinkuGautiPasiulymusIrPaklausimus()
         {
-            Common.ClickElement(Locators.Subscribe.ClickSutinkuGautiPasiulymusIrPaklausimus);
+            Common.ClickElement(Locators.Subscribe.SutinkuGautiPasiulymusIrPaklausimus);
         }
         public static void ClickButtonPrenumeruoti()
         {
-            Common.ClickElement(Locators.Subscribe.ClickButtonPrenumeruoti);
+            Common.ClickElement(Locators.Subscribe.Prenumeruoti);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Framework.POM
         {
             internal static string InputElPastoAdresas = "//*[@id='mce-EMAIL']";
             internal static string SutinkuGautiBendroPobudzioLaiskus = "//*[@id='gdpr_1']";
-            internal static string GautiPasiulymusIrPaklausimus = "//*[@id='gdpr_9']";
+            internal static string SutinkuGautiPasiulymusIrPaklausimus = "//*[@id='gdpr_9']";
             internal static string Prenumeruoti = "//*[@id='mc-embedded-subscribe']";
         }
         internal class SellYourBook
