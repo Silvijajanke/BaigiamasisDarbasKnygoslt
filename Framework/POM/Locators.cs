@@ -26,6 +26,7 @@ namespace Framework.POM
             internal static string ClickToBook = "(//*[@data-cta-product-id='15534400'])[1]";
             internal static string ClickHeart = "(//*[@id='wishlist-action'])[2]";
 
+
         }
         internal class Subscribe
         {

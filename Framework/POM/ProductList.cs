@@ -23,7 +23,7 @@ namespace Framework.POM
 
         public static void ClickIeskokite()
         {
-            Common.ClickElement(Locators.ProductList.ClickIeskokite);
+            Common.ClickElement(Locators.ProductList.ClickSearch);
         }
 
         public static void ClickKlasika()
@@ -53,11 +53,11 @@ namespace Framework.POM
 
         public static string GetPirktiTitle()
         {
-            return Common.GetElement(Locators.ProductList.GetPirktiTitle);
+            return Common.GetElement(Locators.ProductList.GetPirktiTitle, "");
         }
-        public static void GetRedHeart()
+        public static string GetRedHeart()
         {
-            return Common.GetElement(Locators.ProductList.GetRedHeart);
+            return Common.GetElement(Locators.ProductList.ClickHeart, "color");
         }
     }
 }
