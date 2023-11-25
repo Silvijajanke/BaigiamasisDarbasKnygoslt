@@ -33,17 +33,7 @@ namespace Framework
             driver.Quit();
         }
 
-        public static string GetSiustiProblemaPerziurejimui()
-        {
-            return driver.Title;
-        }
-
         public static string GetSearchTitle()
-        {
-            return driver.Title;
-        }
-
-        public static string GetPurchaseTitle()
         {
             return driver.Title;
         }
@@ -53,9 +43,14 @@ namespace Framework
             return driver.Title;
         }
 
-        public static string GetRedHeart()
+        public static string GetSubscribeTitle()
         {
-            throw new NotImplementedException();
+            return driver.Title;
         }
+
+        //public static string GetRedHeart()
+        //{
+        //    return driver.;
+        //}
     }
 }

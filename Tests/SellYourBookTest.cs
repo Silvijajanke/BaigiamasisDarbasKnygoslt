@@ -1,19 +1,14 @@
 ﻿using Framework;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tests
 {
     internal class SellYourBookTest
     {
-        internal class LoginScenario : BaseTests
+        internal class SellYourBookScenario : BaseTests
         {
             [Test]
-            public void Login()
+            public void SellBook()
             {
                 string ElPastas = "de141488@gmail.com";
                 string slaptazodis = "Demo881414";
