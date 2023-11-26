@@ -53,7 +53,7 @@ namespace Framework.POM
 
         public static string GetPirktiTitle()
         {
-            return Common.GetElement(Locators.ProductList.OutputPirktiTitle, "");
+            return Common.GetElement(Locators.ProductList.OutputPirktiTitle, "Pirkti");
         }
         public static string GetRedHeart()
         {

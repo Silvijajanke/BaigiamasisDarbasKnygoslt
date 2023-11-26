@@ -7,22 +7,25 @@ namespace Tests
 {
     internal class BaseTests
     {
-        internal class BaseTest
+        [SetUp]
+        public void SetUp()
         {
-            [SetUp]
-            public void SetUp()
+            Driver.InitializeDriver();
+            Login.Open();
+            System.Threading.Thread.Sleep(1000);
+            Framework.POM.Login.ClickButtonDeclineCookies();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
-                Driver.InitializeDriver();
-                Login.Open();
-                System.Threading.Thread.Sleep(1000);
-                Framework.POM.Login.ClickButtonDeclineCookies();
+                string fileName = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+                TestContext.AddTestAttachment(fileName);
             }
 
-            [TearDown]
-            public void TearDown()
-            {
-                Driver.QuitDriver();
-            }
+            Driver.QuitDriver();
         }
     }
 }

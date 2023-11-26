@@ -34,5 +34,10 @@ namespace Framework.POM
         {
             return GetElement(getPirktiTitle).Text;
         }
+
+        internal static string GetElement(string outputPirktiTitle, string pirkti)
+        {
+            return GetElement(outputPirktiTitle).Text;
+        }
     }
 }

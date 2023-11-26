@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Framework.POM
 {
     public class Login
@@ -34,6 +36,11 @@ namespace Framework.POM
         public static string GetLoginTitle()
         {
             return Common.GetElementText(Locators.Login.OutputLoginTitle);
+        }
+
+        public static void ClickManoPaskyra()
+        {
+            Common.ClickElement(Locators.Login.ManoPaskyra);
         }
     }
 }

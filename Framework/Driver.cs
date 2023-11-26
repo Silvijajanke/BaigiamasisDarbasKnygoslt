@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.IO;
 
 namespace Framework
 {
@@ -48,9 +49,25 @@ namespace Framework
             return driver.Title;
         }
 
-        //public static string GetRedHeart()
-        //{
-        //    return driver.;
-        //}
+        public static string GetRedHeart()
+        {
+            return driver.Title;
+        }
+
+        public static string GetSellYourBookTitle()
+        {
+            return driver.Title;
+        }
+        public static string TakeScreenshot(string methodName)
+        {
+            string screenshotsDirectoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}screenshots";
+            string screenshotName = $"{methodName}-{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")}.png";
+            string screenshotFilePath = $"{screenshotsDirectoryPath}\\{screenshotName}";
+
+            Directory.CreateDirectory(screenshotsDirectoryPath);
+            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
+            return screenshotFilePath;
+        }
     }
 }

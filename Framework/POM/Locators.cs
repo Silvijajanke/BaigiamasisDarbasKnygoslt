@@ -11,7 +11,8 @@ namespace Framework.POM
             internal static string InputElPastoAdresas = "//*[@id='emailInput']";
             internal static string InputSlaptazodis = "//*[@id='passwordInput']";
             internal static string Prisijungti = "//*[@value='Prisijungti']";
-            internal static string OutputLoginTitle = "//*[@class='col col-lg-auto user-menu-item auth-profile-menu-item']";
+            internal static string ManoPaskyra = "(//*[@href='https://www.knygos.lt/user/personal-data'])[2]";
+            internal static string OutputLoginTitle = "(//*[@class='stretched-link text-dark text-decoration-none'])[1]";
 
         }
         internal class ProductList
@@ -34,6 +35,7 @@ namespace Framework.POM
             internal static string SutinkuGautiBendroPobudzioLaiskus = "//*[@id='gdpr_1']";
             internal static string SutinkuGautiPasiulymusIrPaklausimus = "//*[@id='gdpr_9']";
             internal static string Prenumeruoti = "//*[@id='mc-embedded-subscribe']";
+            internal static string Advertising = "//*[@onclick='bar_close(358)'] ";
         }
         internal class SellYourBook
         {
