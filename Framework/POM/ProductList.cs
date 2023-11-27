@@ -8,6 +8,7 @@ namespace Framework.POM
     {
         public static void ClickBook()
         {
+            Common.ScrollBy(0, 200);
             Common.ClickElement(Locators.ProductList.Book);
         }
 
@@ -57,7 +58,7 @@ namespace Framework.POM
         }
         public static string GetRedHeart()
         {
-            return Common.GetElement(Locators.ProductList.HeartIcon, "color");
+            return Common.GetElement(Locators.ProductList.HeartIcon, " rgb(255, 0, 0, 0)");
         }
 
     }

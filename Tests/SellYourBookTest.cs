@@ -18,7 +18,6 @@ namespace Tests
                 Framework.POM.Login.EnterElPastoAdresas(ElPastas);
                 Framework.POM.Login.EnterSlaptazodis(slaptazodis);
                 Framework.POM.Login.ClickPrisijungti();
-
                 Framework.POM.SellYourBook.ClickManoPaskyra();
                 Framework.POM.SellYourBook.ClickSkaitytosKnygos();
                 Framework.POM.SellYourBook.ClickPradetiPrekyba();
