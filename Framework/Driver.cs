@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.POM;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
@@ -34,6 +35,10 @@ namespace Framework
             driver.Quit();
         }
 
+        public static void CloseDriver()
+        {
+            driver.Close();
+        }
         public static string GetSearchTitle()
         {
             return driver.Title;
@@ -56,7 +61,7 @@ namespace Framework
 
         public static string GetSellYourBookTitle()
         {
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
             return driver.Title;
         }
         

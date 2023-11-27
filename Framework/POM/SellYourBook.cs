@@ -32,5 +32,9 @@ namespace Framework.POM
         {
             Common.ClickElement(Locators.SellYourBook.SkaitytosKnygos);
         }
+        public static string GetSellYourBookTitle()
+        {
+            return Common.GetElementText(Locators.SellYourBook.OutputSellYourBookTitle);
+        }
     }
 }

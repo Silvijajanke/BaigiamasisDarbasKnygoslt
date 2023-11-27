@@ -13,7 +13,7 @@ namespace Tests
             Driver.InitializeDriver();
             Login.Open();
             System.Threading.Thread.Sleep(1000);
-            Framework.POM.Login.ClickButtonDeclineCookies();
+            Login.ClickButtonDeclineCookies();
         }
 
         [TearDown]

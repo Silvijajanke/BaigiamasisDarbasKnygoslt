@@ -36,6 +36,7 @@ namespace Framework.POM
             internal static string SutinkuGautiPasiulymusIrPaklausimus = "//*[@id='gdpr_9']";
             internal static string Prenumeruoti = "//*[@id='mc-embedded-subscribe']";
             internal static string Advertising = "//*[@onclick='bar_close(364)']";
+            internal static string OutputSubscribeTitle = "//*[@id='templateBody']/h2";
         }
         internal class SellYourBook
         {
