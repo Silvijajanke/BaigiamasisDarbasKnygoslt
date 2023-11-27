@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using System;
 
 namespace Framework.POM
@@ -39,5 +40,25 @@ namespace Framework.POM
         {
             return GetElement(outputPirktiTitle).Text;
         }
+        internal static void ScrollBy(int pixelsRight, int pixelsDown)
+        {
+            ExecuteJavaScript($"window.scrollBy({pixelsRight}, {pixelsDown})");
+        }
+
+        private static void ExecuteJavaScript(string script)
+        {
+            Driver.GetDriver().ExecuteJavaScript(script);
+        }
+
+        internal static string GetAttributeValue(string locator, string attributeName)
+        {
+            return GetElement(locator).GetAttribute(attributeName);
+        }
+
+        //internal static string GetCssValue(string locator, string propertyName)
+        //{
+        //    return GetElement(locator).GetCssValue(propertyName);
+        //}
+
     }
 }

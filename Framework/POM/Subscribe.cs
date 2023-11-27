@@ -26,7 +26,10 @@ namespace Framework.POM
 
         public static void CloseAdvertising()
         {
-            ((IJavaScriptExecutor)driver).ExecuteJavaScript("window.scrollBy(0, 300)");
+            //((IJavaScriptExecutor)driver).
+            //Common.ScrollBy("window.scrollBy(0, 300)");
+            //System.Threading.Thread.Sleep(1000);
+            Common.ScrollBy(0, 6000);
             Common.ClickElement(Locators.Subscribe.Advertising);
         }
     }

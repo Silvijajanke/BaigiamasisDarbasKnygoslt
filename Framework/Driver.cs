@@ -2,13 +2,13 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
+using System.Threading;
 
 namespace Framework
 {
     public class Driver
     {
         static IWebDriver driver;
-
         public static void InitializeDriver()
         {
             driver = new ChromeDriver();
@@ -56,16 +56,18 @@ namespace Framework
 
         public static string GetSellYourBookTitle()
         {
+            System.Threading.Thread.Sleep(1000);
             return driver.Title;
         }
+        
         public static string TakeScreenshot(string methodName)
         {
             string screenshotsDirectoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}screenshots";
             string screenshotName = $"{methodName}-{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")}.png";
             string screenshotFilePath = $"{screenshotsDirectoryPath}\\{screenshotName}";
 
-            Directory.CreateDirectory(screenshotsDirectoryPath);
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            Directory.CreateDirectory(screenshotsDirectoryPath);
             screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
             return screenshotFilePath;
         }

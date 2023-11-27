@@ -59,5 +59,6 @@ namespace Framework.POM
         {
             return Common.GetElement(Locators.ProductList.HeartIcon, "color");
         }
+
     }
 }
