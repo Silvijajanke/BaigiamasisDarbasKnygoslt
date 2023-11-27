@@ -17,10 +17,8 @@ namespace Tests
             Framework.POM.Login.EnterElPastoAdresas(ElPastas);
             Framework.POM.Login.EnterSlaptazodis(slaptazodis);
             Framework.POM.Login.ClickPrisijungti();
-            //Framework.POM.Subscribe.CloseAdvertising();
+            Framework.POM.Subscribe.CloseAdvertising();
             Framework.POM.Subscribe.EnterElPastoAdresas(ElPastas);
-            Framework.POM.Subscribe.ClickSutinkuGautiBendroPobudzioLaiskus();
-            Framework.POM.Subscribe.ClickSutinkuGautiPasiulymusIrPaklausimus();
             Framework.POM.Subscribe.ClickButtonPrenumeruoti();
 
             string actualResult = Driver.GetSubscribeTitle();

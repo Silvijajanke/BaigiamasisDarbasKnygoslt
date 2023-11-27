@@ -11,25 +11,17 @@ namespace Framework.POM
         {
             Common.SendKeysToElement(Locators.Subscribe.InputElPastoAdresas, ElPastas);
         }
-        public static void ClickSutinkuGautiBendroPobudzioLaiskus()
-        {
-            Common.ClickElement(Locators.Subscribe.SutinkuGautiBendroPobudzioLaiskus);
-        }
-        public static void ClickSutinkuGautiPasiulymusIrPaklausimus()
-        {
-            Common.ClickElement(Locators.Subscribe.SutinkuGautiPasiulymusIrPaklausimus);
-        }
+        
         public static void ClickButtonPrenumeruoti()
         {
             Common.ClickElement(Locators.Subscribe.Prenumeruoti);
+            System.Threading.Thread.Sleep(1000);
         }
 
         public static void CloseAdvertising()
         {
-            //((IJavaScriptExecutor)driver).
-            //Common.ScrollBy("window.scrollBy(0, 300)");
-            //System.Threading.Thread.Sleep(1000);
-            Common.ScrollBy(0, 6000);
+            Common.ScrollBy(0, 5000);
+            System.Threading.Thread.Sleep(1000);
             Common.ClickElement(Locators.Subscribe.Advertising);
         }
     }

@@ -50,10 +50,10 @@ namespace Framework.POM
             Driver.GetDriver().ExecuteJavaScript(script);
         }
 
-        internal static string GetAttributeValue(string locator, string attributeName)
-        {
-            return GetElement(locator).GetAttribute(attributeName);
-        }
+        //internal static string GetAttributeValue(string locator, string attributeName)
+        //{
+        //    return GetElement(locator).GetAttribute(attributeName);
+        //}
 
         //internal static string GetCssValue(string locator, string propertyName)
         //{
