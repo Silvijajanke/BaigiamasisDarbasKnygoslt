@@ -1,5 +1,6 @@
 ﻿
 
+using OpenQA.Selenium;
 using System;
 
 namespace Framework.POM
@@ -25,8 +26,7 @@ namespace Framework.POM
 
         public static void CloseAdvertising()
         {
-            
-            //Driver.ExecuteJavaScript("window.scrollBy(0, 100)");
+            ((IJavaScriptExecutor)driver).ExecuteJavaScript("window.scrollBy(0, 300)");
             Common.ClickElement(Locators.Subscribe.Advertising);
         }
     }
