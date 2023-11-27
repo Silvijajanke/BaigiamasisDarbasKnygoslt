@@ -21,8 +21,9 @@ namespace Tests
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
-                string fileName = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-                TestContext.AddTestAttachment(fileName);
+                string methodName = TestContext.CurrentContext.Test.MethodName;
+                string filePath = Driver.TakeScreenshot(methodName);
+                TestContext.AddTestAttachment(filePath);
             }
 
             Driver.QuitDriver();

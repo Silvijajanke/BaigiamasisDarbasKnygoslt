@@ -64,16 +64,16 @@ namespace Framework
             Thread.Sleep(1000);
             return driver.Title;
         }
-        
+
         public static string TakeScreenshot(string methodName)
         {
-            string screenshotsDirectoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}screenshots";
-            string screenshotName = $"{methodName}-{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")}.png";
-            string screenshotFilePath = $"{screenshotsDirectoryPath}\\{screenshotName}";
+            string screenshotsDirectoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}Screenshots";
+            string screenshotName = $"{methodName}-{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")}";
+            string screenshotFilePath = $"{screenshotsDirectoryPath}\\{screenshotName}.png";
 
-            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
             Directory.CreateDirectory(screenshotsDirectoryPath);
-            screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
+            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            screenshot.SaveAsFile(screenshotFilePath);
             return screenshotFilePath;
         }
     }
