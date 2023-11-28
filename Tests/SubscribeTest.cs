@@ -1,5 +1,4 @@
-﻿using Framework;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Tests
 {
@@ -14,8 +13,8 @@ namespace Tests
             Framework.POM.Subscribe.EnterElPastoAdresas("test@test.com");
             Framework.POM.Subscribe.ClickButtonPrenumeruoti();
 
-            string actualResult = Driver.GetSubscribeTitle();
-            Assert.That(Driver.GetSubscribeTitle(), Is.EqualTo(subscribeTitle));
+            string actualResult = Framework.POM.Subscribe.GetPageTitle();
+            Assert.That(Framework.POM.Subscribe.GetPageTitle(), Is.EqualTo(subscribeTitle));
         }
     }
 }

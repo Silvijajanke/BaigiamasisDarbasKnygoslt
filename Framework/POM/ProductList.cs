@@ -1,11 +1,12 @@
-﻿
-
-using System;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class ProductList
     {
+        public static string GetPageTitle()
+        {
+            return Common.GetPageTitle();
+        }
+
         public static void ClickBook()
         {
             Common.ScrollBy(0, 200);

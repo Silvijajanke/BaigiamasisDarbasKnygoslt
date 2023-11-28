@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class SellYourBook
     {
+        public static string GetPageTitle()
+        {
+            return Common.GetPageTitle();
+        }
 
         public static void ClickButtonDeclineCookies()
         {

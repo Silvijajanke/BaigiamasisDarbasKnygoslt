@@ -1,12 +1,12 @@
-﻿
-
-using OpenQA.Selenium;
-using System;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class Subscribe
     {
+        public static string GetPageTitle()
+        {
+            return Common.GetPageTitle();
+        }
+
         public static void EnterElPastoAdresas(string ElPastas)
         {
             Common.SendKeysToElement(Locators.Subscribe.InputElPastoAdresas, ElPastas);
@@ -16,7 +16,6 @@ namespace Framework.POM
         {
             Common.ClickElement(Locators.Subscribe.Prenumeruoti);
             System.Threading.Thread.Sleep(1000);
-            Driver.CloseDriver();
         }
 
         public static void CloseAdvertising()

@@ -1,5 +1,4 @@
-﻿using Framework;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Tests
 {
@@ -16,8 +15,8 @@ namespace Tests
             Framework.POM.Login.EnterSlaptazodis(slaptazodis);
             Framework.POM.Login.ClickPrisijungti();
             Framework.POM.Login.ClickManoPaskyra();
-            string actualResult = Driver.GetLoginTitle();
-            Assert.That(Driver.GetLoginTitle(), Is.EqualTo("Asmeniniai duomenys - Knygos.lt"));
+            string actualResult = Framework.POM.Login.GetPageTitle();
+            Assert.That(Framework.POM.Login.GetPageTitle(), Is.EqualTo("Asmeniniai duomenys - Knygos.lt"));
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Framework;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Tests
 {
@@ -14,8 +13,8 @@ namespace Tests
             Framework.POM.SellYourBook.ClickSkaitytosKnygos();
             Framework.POM.SellYourBook.ClickPradetiPrekyba();
             Framework.POM.SellYourBook.ClickPradeti();
-            string actualResult = Driver.GetSellYourBookTitle();
-            Assert.That(Driver.GetSellYourBookTitle(), Is.EqualTo(uzrasas));
+            string actualResult = Framework.POM.SellYourBook.GetPageTitle();
+            Assert.That(Framework.POM.SellYourBook.GetPageTitle(), Is.EqualTo(uzrasas));
         }
     }
 }

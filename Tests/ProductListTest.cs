@@ -1,5 +1,4 @@
-﻿using Framework;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Tests
 {
@@ -12,8 +11,8 @@ namespace Tests
             Framework.POM.ProductList.ClickGrozineLiteratura();
             Framework.POM.ProductList.ClickKlasika();
             Framework.POM.ProductList.ClickBook();
-            string actualResult = Driver.GetPirktiTitle();
-            Assert.That(Driver.GetPirktiTitle(), Is.EqualTo("Į krepšelį"));
+            string actualResult = Framework.POM.ProductList.GetPageTitle();
+            Assert.That(Framework.POM.ProductList.GetPageTitle(), Is.EqualTo("Į krepšelį"));
         }
 
         [Test]
@@ -28,8 +27,8 @@ namespace Tests
             Framework.POM.ProductList.ClickSearch();
             Framework.POM.ProductList.ClickToBook();
             Framework.POM.ProductList.ClickHeart();
-            string actualResult = Driver.GetRedHeart();
-            Assert.That(Driver.GetRedHeart(), Is.EqualTo(expectedHeartColor));
+            string actualResult = Framework.POM.ProductList.GetPageTitle();
+            Assert.That(Framework.POM.ProductList.GetPageTitle(), Is.EqualTo(expectedHeartColor));
             Framework.POM.ProductList.ClickHeart();
         }
 

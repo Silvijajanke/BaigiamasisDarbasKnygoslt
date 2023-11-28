@@ -2,6 +2,11 @@
 {
     public class Login
     {
+        public static string GetPageTitle()
+        {
+            return Common.GetPageTitle();
+        }
+
         public static void ClickButtonDeclineCookies()
         {
             Common.ClickElement(Locators.Login.ButtonDeclineCookies);
@@ -28,7 +33,7 @@
 
         public static void Open()
         {
-            Driver.OpenPage("https://www.knygos.lt/");
+            Common.OpenPage("https://www.knygos.lt/");
         }
         public static string GetLoginTitle()
         {

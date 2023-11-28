@@ -1,6 +1,4 @@
-﻿
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     internal class Locators
     {

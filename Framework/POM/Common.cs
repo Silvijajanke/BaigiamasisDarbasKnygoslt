@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
-using System;
 
 namespace Framework.POM
 {
@@ -55,5 +54,14 @@ namespace Framework.POM
             return GetElement(locator).Text;
         }
 
+        internal static void OpenPage(string url)
+        {
+            Driver.GetDriver().Url = url;
+        }
+
+        internal static string GetPageTitle()
+        {
+            return Driver.GetDriver().Title;
+        }
     }
 }
