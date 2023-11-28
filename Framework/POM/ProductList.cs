@@ -9,8 +9,7 @@
 
         public static void ClickBook()
         {
-            Common.ScrollBy(0, 200);
-            System.Threading.Thread.Sleep(1000);
+            Common.WaitForElementToBeVisisble(Locators.ProductList.Book);
             Common.ClickElement(Locators.ProductList.Book);
         }
 

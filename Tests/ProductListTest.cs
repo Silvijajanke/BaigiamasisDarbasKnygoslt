@@ -8,12 +8,13 @@ namespace Tests
         [Test]
         public void ProductSearch()
         {
+            string expectedPageTitle = "Nežudyk strazdo giesmininko | Knygos.lt";
             ProductList.ClickVisosKnygos();
             ProductList.ClickGrozineLiteratura();
             ProductList.ClickKlasika();
             ProductList.ClickBook();
-            string actualResult = ProductList.GetPageTitle();
-            Assert.That(ProductList.GetPageTitle(), Is.EqualTo("Į krepšelį"));
+            string actualPageTitle = ProductList.GetPageTitle();
+            Assert.That(actualPageTitle, Is.EqualTo(expectedPageTitle));
         }
 
         [Test]

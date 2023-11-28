@@ -16,9 +16,9 @@
         internal class ProductList
         {
             internal static string VisosKnygos = "//*[@id='all-products']";
-            internal static string GrozineLiteratura = "(//*[@class='ico-sm-right-after'])[2]";
-            internal static string Klasika = "(//*[@href ='https://www.knygos.lt/lt/knygos/zanras/klasika/'])[2]";
-            internal static string Book = "(//*[@title='Nežudyk strazdo giesmininko'])[2]";
+            internal static string GrozineLiteratura = "//*[@id='grozine-literatura']/..";
+            internal static string Klasika = "//*[@id='filter-desktop']//*[text()='Klasika']";
+            internal static string Book = "//a[@data-cta-name='Nežudyk strazdo giesmininko']/..";
             internal static string OutputPirktiTitle = "//*[@id='add_to_cart_single_add_to_cart_book2']";
             internal static string InputBookName = "//*[@id='product-search']";
             internal static string Search = "//*[@class='ico-search']";
