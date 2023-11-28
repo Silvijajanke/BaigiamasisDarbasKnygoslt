@@ -7,10 +7,6 @@
             return Common.GetPageTitle();
         }
 
-        public static void ClickButtonDeclineCookies()
-        {
-            Common.ClickElement(Locators.Login.ButtonDeclineCookies);
-        }
         public static void ClickManoPaskyra()
         {
             Common.ClickElement(Locators.SellYourBook.ManoPaskyra);
@@ -29,10 +25,6 @@
         public static void ClickSkaitytosKnygos()
         {
             Common.ClickElement(Locators.SellYourBook.SkaitytosKnygos);
-        }
-        public static string GetSellYourBookTitle()
-        {
-            return Common.GetElementText(Locators.SellYourBook.OutputSellYourBookTitle);
         }
     }
 }

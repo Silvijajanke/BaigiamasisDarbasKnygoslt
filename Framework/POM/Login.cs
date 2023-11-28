@@ -7,10 +7,6 @@
             return Common.GetPageTitle();
         }
 
-        public static void ClickButtonDeclineCookies()
-        {
-            Common.ClickElement(Locators.Login.ButtonDeclineCookies);
-        }
         public static void ClickButtonPrisijungtiRegistruotis()
         {
             Common.ClickElement(Locators.Login.PrisijungtiRegistruotis);
@@ -31,23 +27,9 @@
             Common.SendKeysToElement(Locators.Login.InputSlaptazodis, slaptazodis);
         }
 
-        public static void Open()
-        {
-            Common.OpenPage("https://www.knygos.lt/");
-        }
-        public static string GetLoginTitle()
-        {
-            return Common.GetElementText(Locators.Login.OutputLoginTitle);
-        }
-
         public static void ClickManoPaskyra()
         {
             Common.ClickElement(Locators.Login.ManoPaskyra);
-        }
-
-        public static void CloseAd()
-        {
-            Common.ClickElement("//*[@id='bottom-bar']//*[@class='close']");
         }
     }
 }

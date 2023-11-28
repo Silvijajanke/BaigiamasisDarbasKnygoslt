@@ -24,11 +24,6 @@
             Common.ClickElement(Locators.ProductList.HeartIcon);
         }
 
-        public static void ClickIeskokite()
-        {
-            Common.ClickElement(Locators.ProductList.Search);
-        }
-
         public static void ClickKlasika()
         {
             Common.ClickElement(Locators.ProductList.Klasika);
@@ -53,16 +48,5 @@
         {
             Common.SendKeysToElement(Locators.ProductList.InputBookName, bookName);
         }
-
-        public static string GetPirktiTitle()
-        {
-            return Common.GetElementText(Locators.ProductList.OutputPirktiTitle);
-        }
-
-        public static string GetRedHeart(string expectedHeartColor)
-        {
-            return Common.GetElementText(Locators.ProductList.RedHeartIcon);
-        }
-
     }
 }

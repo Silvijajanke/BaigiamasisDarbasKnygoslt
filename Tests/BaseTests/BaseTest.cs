@@ -11,10 +11,9 @@ namespace Tests
         public void SetUp()
         {
             Driver.InitializeDriver();
-            Login.Open();
-            System.Threading.Thread.Sleep(1000);
-            Login.ClickButtonDeclineCookies();
-            Subscribe.CloseAdvertising();
+            Home.Open();
+            Home.ClickButtonDeclineCookies();
+            Home.CloseAdvertising();
         }
 
         [TearDown]
