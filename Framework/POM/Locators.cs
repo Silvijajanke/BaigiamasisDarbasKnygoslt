@@ -26,6 +26,7 @@ namespace Framework.POM
             internal static string Search = "//*[@class='ico-search']";
             internal static string ToBook = "(//*[@data-cta-product-id='15534400'])[1]";
             internal static string HeartIcon = "(//*[@id='wishlist-action'])[2]";
+            internal static string RedHeartIcon = "(//*[@class='btn btn-outline-secondary wish-list-btn active'])[2]";
 
 
         }

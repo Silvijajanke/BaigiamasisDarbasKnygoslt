@@ -32,6 +32,7 @@ namespace Tests
             string ElPastas = "de141488@gmail.com";
             string slaptazodis = "Demo881414";
             string bookName = "Nežudyk strazdo giesmininko";
+            string expectedHeartColor = "#e40f2f";
 
             Framework.POM.Login.ClickButtonPrisijungtiRegistruotis();
             Framework.POM.Login.EnterElPastoAdresas(ElPastas);
@@ -42,7 +43,7 @@ namespace Tests
             Framework.POM.ProductList.ClickToBook();
             Framework.POM.ProductList.ClickHeart();
             string actualResult = Driver.GetRedHeart();
-            Assert.That(Driver.GetRedHeart(), Is.EqualTo("rgb *"));
+            Assert.That(Driver.GetRedHeart(), Is.EqualTo(expectedHeartColor));
             Framework.POM.ProductList.ClickHeart();
         }
 

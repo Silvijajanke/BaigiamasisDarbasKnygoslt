@@ -1,4 +1,4 @@
-﻿using Framework.POM;
+﻿
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -9,7 +9,7 @@ namespace Framework
 {
     public class Driver
     {
-        static IWebDriver driver;
+        internal static IWebDriver driver;
         public static void InitializeDriver()
         {
             driver = new ChromeDriver();

@@ -55,10 +55,11 @@ namespace Framework.POM
         //    return GetElement(locator).GetAttribute(attributeName);
         //}
 
-        //internal static string GetCssValue(string locator, string propertyName)
-        //{
-        //    return GetElement(locator).GetCssValue(propertyName);
-        //}
+        internal static string GetElementCssPropertyValue(string locator, string propertyName)
+        {
+            IWebElement element = GetElement(locator);
+            return element.GetCssValue(propertyName);
+        }
 
     }
 }

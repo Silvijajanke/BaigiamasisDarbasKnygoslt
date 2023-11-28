@@ -56,9 +56,9 @@ namespace Framework.POM
         {
             return Common.GetElement(Locators.ProductList.OutputPirktiTitle, "Pirkti");
         }
-        public static string GetRedHeart()
+        public static string GetRedHeart(string expectedHeartColor)
         {
-            return Common.GetElement(Locators.ProductList.HeartIcon, " rgb(255, 0, 0, 0)");
+            return Common.GetElement(Locators.ProductList.RedHeartIcon, expectedHeartColor);
         }
 
     }
