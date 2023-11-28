@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Framework.POM;
+using NUnit.Framework;
 
 namespace Tests
 {
@@ -9,12 +10,12 @@ namespace Tests
         {
             string uzrasas = "Norėdami parduoti knygas užpildykite informaciją, kuri bus naudojama sutarčiai pasirašyti ir finansinėms operacijoms atlikti.";
 
-            Framework.POM.SellYourBook.ClickManoPaskyra();
-            Framework.POM.SellYourBook.ClickSkaitytosKnygos();
-            Framework.POM.SellYourBook.ClickPradetiPrekyba();
-            Framework.POM.SellYourBook.ClickPradeti();
-            string actualResult = Framework.POM.SellYourBook.GetPageTitle();
-            Assert.That(Framework.POM.SellYourBook.GetPageTitle(), Is.EqualTo(uzrasas));
+            SellYourBook.ClickManoPaskyra();
+            SellYourBook.ClickSkaitytosKnygos();
+            SellYourBook.ClickPradetiPrekyba();
+            SellYourBook.ClickPradeti();
+            string actualResult = SellYourBook.GetPageTitle();
+            Assert.That(SellYourBook.GetPageTitle(), Is.EqualTo(uzrasas));
         }
     }
 }

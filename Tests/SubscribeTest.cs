@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Framework.POM;
+using NUnit.Framework;
 
 namespace Tests
 {
@@ -6,15 +7,15 @@ namespace Tests
     {
 
         [Test]
-        public void Subscribe()
+        public void SubscribeToNewsletter()
         {
             string subscribeTitle = "Naujienlaiškių prenumerata patvirtinta";
 
-            Framework.POM.Subscribe.EnterElPastoAdresas("test@test.com");
-            Framework.POM.Subscribe.ClickButtonPrenumeruoti();
+            Subscribe.EnterElPastoAdresas("test@test.com");
+            Subscribe.ClickButtonPrenumeruoti();
 
-            string actualResult = Framework.POM.Subscribe.GetPageTitle();
-            Assert.That(Framework.POM.Subscribe.GetPageTitle(), Is.EqualTo(subscribeTitle));
+            string actualResult = Subscribe.GetPageTitle();
+            Assert.That(Subscribe.GetPageTitle(), Is.EqualTo(subscribeTitle));
         }
     }
 }

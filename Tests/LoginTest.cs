@@ -1,22 +1,23 @@
 ﻿using NUnit.Framework;
+using Framework.POM;
 
 namespace Tests
 {
     internal class LoginTest : BaseTest
     {
         [Test]
-        public void Login()
+        public void LoginWithValidCredentials()
         {
             string ElPastas = "de141488@gmail.com";
             string slaptazodis = "Demo881414";
 
-            Framework.POM.Login.ClickButtonPrisijungtiRegistruotis();
-            Framework.POM.Login.EnterElPastoAdresas(ElPastas);
-            Framework.POM.Login.EnterSlaptazodis(slaptazodis);
-            Framework.POM.Login.ClickPrisijungti();
-            Framework.POM.Login.ClickManoPaskyra();
-            string actualResult = Framework.POM.Login.GetPageTitle();
-            Assert.That(Framework.POM.Login.GetPageTitle(), Is.EqualTo("Asmeniniai duomenys - Knygos.lt"));
+            Login.ClickButtonPrisijungtiRegistruotis();
+            Login.EnterElPastoAdresas(ElPastas);
+            Login.EnterSlaptazodis(slaptazodis);
+            Login.ClickPrisijungti();
+            Login.ClickManoPaskyra();
+            string actualResult = Login.GetPageTitle();
+            Assert.That(Login.GetPageTitle(), Is.EqualTo("Asmeniniai duomenys - Knygos.lt"));
         }
     }
 }

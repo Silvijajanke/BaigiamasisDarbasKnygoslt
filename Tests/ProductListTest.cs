@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Framework.POM;
+using NUnit.Framework;
 
 namespace Tests
 {
@@ -7,12 +8,12 @@ namespace Tests
         [Test]
         public void ProductSearch()
         {
-            Framework.POM.ProductList.ClickVisosKnygos();
-            Framework.POM.ProductList.ClickGrozineLiteratura();
-            Framework.POM.ProductList.ClickKlasika();
-            Framework.POM.ProductList.ClickBook();
-            string actualResult = Framework.POM.ProductList.GetPageTitle();
-            Assert.That(Framework.POM.ProductList.GetPageTitle(), Is.EqualTo("Į krepšelį"));
+            ProductList.ClickVisosKnygos();
+            ProductList.ClickGrozineLiteratura();
+            ProductList.ClickKlasika();
+            ProductList.ClickBook();
+            string actualResult = ProductList.GetPageTitle();
+            Assert.That(ProductList.GetPageTitle(), Is.EqualTo("Į krepšelį"));
         }
 
         [Test]
