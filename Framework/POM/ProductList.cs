@@ -56,11 +56,12 @@
 
         public static string GetPirktiTitle()
         {
-            return Common.GetElement(Locators.ProductList.OutputPirktiTitle, "Pirkti");
+            return Common.GetElementText(Locators.ProductList.OutputPirktiTitle);
         }
+
         public static string GetRedHeart(string expectedHeartColor)
         {
-            return Common.GetElement(Locators.ProductList.RedHeartIcon, expectedHeartColor);
+            return Common.GetElementText(Locators.ProductList.RedHeartIcon);
         }
 
     }

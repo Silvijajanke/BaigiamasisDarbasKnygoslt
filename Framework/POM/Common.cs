@@ -5,7 +5,17 @@ namespace Framework.POM
 {
     internal class Common
     {
-        internal static IWebElement GetElement(string locator)
+        internal static void OpenPage(string url)
+        {
+            Driver.GetDriver().Url = url;
+        }
+
+        internal static string GetPageTitle()
+        {
+            return Driver.GetDriver().Title;
+        }
+
+        private static IWebElement GetElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
@@ -25,15 +35,6 @@ namespace Framework.POM
             return GetElement(locator).Text;
         }
 
-        internal static string GetLoginTitle(string getLoginTitle)
-        {
-            return GetElement(getLoginTitle).Text;
-        }
-
-        internal static string GetElement(string outputPirktiTitle, string pirkti)
-        {
-            return GetElement(outputPirktiTitle).Text;
-        }
         internal static void ScrollBy(int pixelsRight, int pixelsDown)
         {
             ExecuteJavaScript($"window.scrollBy({pixelsRight}, {pixelsDown})");
@@ -42,26 +43,6 @@ namespace Framework.POM
         private static void ExecuteJavaScript(string script)
         {
             Driver.GetDriver().ExecuteJavaScript(script);
-        }
-
-        internal static string GetElementCssPropertyValue(string locator, string propertyName)
-        {
-            IWebElement element = GetElement(locator);
-            return element.GetCssValue(propertyName);
-        }
-        internal static string GetSellYourBookTitle(string locator)
-        {
-            return GetElement(locator).Text;
-        }
-
-        internal static void OpenPage(string url)
-        {
-            Driver.GetDriver().Url = url;
-        }
-
-        internal static string GetPageTitle()
-        {
-            return Driver.GetDriver().Title;
         }
     }
 }
