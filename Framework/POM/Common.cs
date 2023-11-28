@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace Framework.POM
 {
@@ -43,6 +45,13 @@ namespace Framework.POM
         private static void ExecuteJavaScript(string script)
         {
             Driver.GetDriver().ExecuteJavaScript(script);
+        }
+
+        internal static void WaitForElementToBeVisisble(string locator)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+            wait.Until(d => d.FindElement(By.XPath(locator)));
         }
     }
 }

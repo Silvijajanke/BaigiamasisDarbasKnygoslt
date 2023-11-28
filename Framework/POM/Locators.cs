@@ -4,7 +4,7 @@
     {
         internal class Login
         {
-            internal static string ButtonDeclineCookies = " //*[@class='cc-btn cc-allow']";
+            internal static string ButtonDeclineCookies = "//*[@aria-label='deny cookies']";
             internal static string PrisijungtiRegistruotis = "(//*[@class='text d-none d-lg-block'])[2]";
             internal static string InputElPastoAdresas = "//*[@id='emailInput']";
             internal static string InputSlaptazodis = "//*[@id='passwordInput']";
@@ -34,7 +34,7 @@
             internal static string SutinkuGautiBendroPobudzioLaiskus = "//*[@id='gdpr_1']";
             internal static string SutinkuGautiPasiulymusIrPaklausimus = "//*[@id='gdpr_9']";
             internal static string Prenumeruoti = "//*[@id='mc-embedded-subscribe']";
-            internal static string Advertising = "(//*[@class='close'])[1]";
+            internal static string Advertising = "//*[@id='bottom-bar']//*[@class='close']";
             internal static string OutputSubscribeTitle = "//*[@id='templateBody']/h2";
         }
         internal class SellYourBook
