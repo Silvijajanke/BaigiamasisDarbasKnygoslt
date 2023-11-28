@@ -1,7 +1,4 @@
-﻿
-using System;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class Login
     {
@@ -41,6 +38,11 @@ namespace Framework.POM
         public static void ClickManoPaskyra()
         {
             Common.ClickElement(Locators.Login.ManoPaskyra);
+        }
+
+        public static void CloseAd()
+        {
+            Common.ClickElement("//*[@id='bottom-bar']//*[@class='close']");
         }
     }
 }

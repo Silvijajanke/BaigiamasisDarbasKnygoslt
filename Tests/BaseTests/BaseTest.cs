@@ -5,7 +5,7 @@ using NUnit.Framework.Interfaces;
 
 namespace Tests
 {
-    internal class BaseTests
+    internal class BaseTest
     {
         [SetUp]
         public void SetUp()
@@ -14,6 +14,7 @@ namespace Tests
             Login.Open();
             System.Threading.Thread.Sleep(1000);
             Login.ClickButtonDeclineCookies();
+            Subscribe.CloseAdvertising();
         }
 
         [TearDown]

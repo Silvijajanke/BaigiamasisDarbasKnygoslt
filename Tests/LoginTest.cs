@@ -1,10 +1,9 @@
 ﻿using Framework;
 using NUnit.Framework;
 
-
 namespace Tests
 {
-    internal class LoginTest : BaseTests
+    internal class LoginTest : BaseTest
     {
         [Test]
         public void Login()
