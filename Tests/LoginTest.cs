@@ -18,7 +18,7 @@ namespace Tests
             Framework.POM.Login.ClickPrisijungti();
             Framework.POM.Login.ClickManoPaskyra();
             string actualResult = Driver.GetLoginTitle();
-            Assert.That(Driver.GetLoginTitle(), Is.EqualTo("Asmeniniai duomenys"));
+            Assert.That(Driver.GetLoginTitle(), Is.EqualTo("Asmeniniai duomenys - Knygos.lt"));
         }
     }
 }
