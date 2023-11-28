@@ -21,7 +21,7 @@ namespace Framework.POM
 
         public static void CloseAdvertising()
         {
-            Common.ScrollBy(0, 5000);
+            Common.ScrollBy(0, 6000);
             System.Threading.Thread.Sleep(1000);
             Common.ClickElement(Locators.Subscribe.Advertising);
         }

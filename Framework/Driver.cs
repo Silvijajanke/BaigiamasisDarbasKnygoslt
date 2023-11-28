@@ -61,7 +61,6 @@ namespace Framework
 
         public static string GetSellYourBookTitle()
         {
-            Thread.Sleep(1000);
             return driver.Title;
         }
 

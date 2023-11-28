@@ -31,11 +31,6 @@ namespace Framework.POM
             return GetElement(getLoginTitle).Text;
         }
 
-        internal static string GetPirktiTitle(string getPirktiTitle)
-        {
-            return GetElement(getPirktiTitle).Text;
-        }
-
         internal static string GetElement(string outputPirktiTitle, string pirkti)
         {
             return GetElement(outputPirktiTitle).Text;
@@ -50,15 +45,14 @@ namespace Framework.POM
             Driver.GetDriver().ExecuteJavaScript(script);
         }
 
-        //internal static string GetAttributeValue(string locator, string attributeName)
-        //{
-        //    return GetElement(locator).GetAttribute(attributeName);
-        //}
-
         internal static string GetElementCssPropertyValue(string locator, string propertyName)
         {
             IWebElement element = GetElement(locator);
             return element.GetCssValue(propertyName);
+        }
+        internal static string GetSellYourBookTitle(string locator)
+        {
+            return GetElement(locator).Text;
         }
 
     }
