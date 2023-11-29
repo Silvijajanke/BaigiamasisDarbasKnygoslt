@@ -43,7 +43,7 @@
             internal static string SkaitytosKnygos = "(//*[@href='https://www.knygos.lt/user/skaitytu-knygu-pristatymas'])[2]";
             internal static string PradetiPrekyba = "//*[@href='https://www.knygos.lt/user/skaitytos-knygos-pasirinkite-pardavimo-buda']";
             internal static string Pradeti = "//*[@class='card option-button text-center']";
-            internal static string OutputSellYourBookTitle = "//*[@class='mb-lg-5 mx-lg-2 alert alert-info']";
+            internal static string OutputSellYourBookTitle = "//*[contains(@class,'alert-info')]";
 
         }
     }

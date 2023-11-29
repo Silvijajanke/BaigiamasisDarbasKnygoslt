@@ -1,4 +1,6 @@
-﻿namespace Framework.POM
+﻿using System;
+
+namespace Framework.POM
 {
     public class SellYourBook
     {
@@ -19,12 +21,17 @@
 
         public static void ClickPradetiPrekyba()
         {
-            Common.ClickElement(Locators.SellYourBook.PradetiPrekyba);
+            Common.ScrollAndClickElement(Locators.SellYourBook.PradetiPrekyba);
         }
 
         public static void ClickSkaitytosKnygos()
         {
             Common.ClickElement(Locators.SellYourBook.SkaitytosKnygos);
+        }
+
+        public static string GetMessage()
+        {
+            return Common.GetElementText(Locators.SellYourBook.OutputSellYourBookTitle);
         }
     }
 }

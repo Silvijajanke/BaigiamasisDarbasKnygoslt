@@ -17,7 +17,7 @@ namespace Tests
             Login.ClickPrisijungti();
             Login.ClickManoPaskyra();
             string actualResult = Login.GetPageTitle();
-            Assert.That(Login.GetPageTitle(), Is.EqualTo("Asmeniniai duomenys - Knygos.lt"));
+            Assert.That(actualResult, Is.EqualTo("Asmeniniai duomenys - Knygos.lt"));
         }
     }
 }

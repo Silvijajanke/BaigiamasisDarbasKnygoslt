@@ -8,14 +8,14 @@ namespace Tests
         [Test]
         public void SellBook()
         {
-            string uzrasas = "Norėdami parduoti knygas užpildykite informaciją, kuri bus naudojama sutarčiai pasirašyti ir finansinėms operacijoms atlikti.";
+            string expectedMessage = "Norėdami parduoti knygas užpildykite informaciją, kuri bus naudojama sutarčiai pasirašyti ir finansinėms operacijoms atlikti.";
 
             SellYourBook.ClickManoPaskyra();
             SellYourBook.ClickSkaitytosKnygos();
             SellYourBook.ClickPradetiPrekyba();
             SellYourBook.ClickPradeti();
-            string actualResult = SellYourBook.GetPageTitle();
-            Assert.That(SellYourBook.GetPageTitle(), Is.EqualTo(uzrasas));
+            string actualMessage = SellYourBook.GetMessage();
+            Assert.That(actualMessage, Is.EqualTo(expectedMessage));
         }
     }
 }

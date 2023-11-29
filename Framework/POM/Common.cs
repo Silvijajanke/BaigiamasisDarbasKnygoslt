@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -69,6 +70,33 @@ namespace Framework.POM
         {
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.Until(d => !d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(value));
+        }
+
+        internal static void ScrollToElement(string locator)
+        {
+            IWebElement element = GetElement(locator);
+
+            Actions actions = new Actions(Driver.GetDriver());
+            actions.ScrollToElement(element);
+            actions.Perform();
+        }
+
+        internal static void ScrollAndClickElement(string locator)
+        {
+            IWebElement element = GetElement(locator);
+
+            while (true)
+            {
+                try
+                {
+                    element.Click();
+                    break;
+                }
+                catch (ElementClickInterceptedException)
+                {
+                    ScrollBy(0, 50);
+                }
+            }
         }
     }
 }
