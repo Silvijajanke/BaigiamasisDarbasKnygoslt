@@ -1,14 +1,7 @@
-﻿using System;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class SellYourBook
     {
-        public static string GetPageTitle()
-        {
-            return Common.GetPageTitle();
-        }
-
         public static void ClickManoPaskyra()
         {
             Common.ClickElement(Locators.SellYourBook.ManoPaskyra);

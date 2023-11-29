@@ -74,15 +74,6 @@ namespace Framework.POM
             wait.Until(d => !d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(value));
         }
 
-        internal static void ScrollToElement(string locator)
-        {
-            IWebElement element = GetElement(locator);
-
-            Actions actions = new Actions(Driver.GetDriver());
-            actions.ScrollToElement(element);
-            actions.Perform();
-        }
-
         internal static void ScrollAndClickElement(string locator)
         {
             IWebElement element = GetElement(locator);

@@ -1,16 +1,17 @@
-﻿using NUnit.Framework;
+﻿using Framework.POM;
+using NUnit.Framework;
 
 namespace Tests
 {
     internal class BaseTestWithLogin : BaseTest
     {
         [SetUp]
-        public void Login()
+        public void LoginMethod()
         {
-            Framework.POM.Login.ClickButtonPrisijungtiRegistruotis();
-            Framework.POM.Login.EnterElPastoAdresas("de141488@gmail.com");
-            Framework.POM.Login.EnterSlaptazodis("Demo881414");
-            Framework.POM.Login.ClickPrisijungti();
+            Login.ClickButtonPrisijungtiRegistruotis();
+            Login.EnterElPastoAdresas("de141488@gmail.com");
+            Login.EnterSlaptazodis("Demo881414");
+            Login.ClickPrisijungti();
             
         }
     }

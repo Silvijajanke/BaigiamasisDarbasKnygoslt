@@ -1,14 +1,7 @@
-﻿using System;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class Subscribe
     {
-        public static string GetPageTitle()
-        {
-            return Common.GetPageTitle();
-        }
-
         public static void EnterElPastoAdresas(string ElPastas)
         {
             Common.SendKeysToElement(Locators.Subscribe.InputElPastoAdresas, ElPastas);
