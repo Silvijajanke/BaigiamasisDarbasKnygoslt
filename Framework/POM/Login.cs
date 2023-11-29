@@ -1,14 +1,12 @@
-﻿
-using System;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class Login
     {
-        public static void ClickButtonDeclineCookies()
+        public static string GetPageTitle()
         {
-            Common.ClickElement(Locators.Login.ButtonDeclineCookies);
+            return Common.GetPageTitle();
         }
+
         public static void ClickButtonPrisijungtiRegistruotis()
         {
             Common.ClickElement(Locators.Login.PrisijungtiRegistruotis);
@@ -27,15 +25,6 @@ namespace Framework.POM
         public static void EnterSlaptazodis(string slaptazodis)
         {
             Common.SendKeysToElement(Locators.Login.InputSlaptazodis, slaptazodis);
-        }
-
-        public static void Open()
-        {
-            Driver.OpenPage("https://www.knygos.lt/");
-        }
-        public static string GetLoginTitle()
-        {
-            return Common.GetElementText(Locators.Login.OutputLoginTitle);
         }
 
         public static void ClickManoPaskyra()

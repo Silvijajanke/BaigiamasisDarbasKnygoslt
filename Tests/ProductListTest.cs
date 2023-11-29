@@ -1,51 +1,34 @@
-﻿
-using Framework;
+﻿using Framework.POM;
 using NUnit.Framework;
 
 namespace Tests
 {
-    internal class ProductListTest : BaseTests
+    internal class ProductListTest : BaseTestWithLogin
     {
-          
         [Test]
         public void ProductSearch()
         {
-            string ElPastas = "de141488@gmail.com";
-            string slaptazodis = "Demo881414";
-
-            Framework.POM.Login.ClickButtonPrisijungtiRegistruotis();
-            Framework.POM.Login.EnterElPastoAdresas(ElPastas);
-            Framework.POM.Login.EnterSlaptazodis(slaptazodis);
-            Framework.POM.Login.ClickPrisijungti();
-            Framework.POM.ProductList.ClickVisosKnygos();
-            Framework.POM.ProductList.ClickGrozineLiteratura();
-            Framework.POM.ProductList.ClickKlasika();
-            Framework.POM.ProductList.ClickBook();
-            string actualResult = Driver.GetPirktiTitle();
-            Assert.That(Driver.GetPirktiTitle(), Is.EqualTo("Į krepšelį"));
-
+            string expectedPageTitle = "Nežudyk strazdo giesmininko | Knygos.lt";
+            ProductList.ClickVisosKnygos();
+            ProductList.ClickGrozineLiteratura();
+            ProductList.ClickKlasika();
+            ProductList.ClickBook();
+            string actualPageTitle = ProductList.GetPageTitle();
+            Assert.That(actualPageTitle, Is.EqualTo(expectedPageTitle));
         }
 
         [Test]
         public void QuickProductSearchAndSave()
         {
-            string ElPastas = "de141488@gmail.com";
-            string slaptazodis = "Demo881414";
             string bookName = "Nežudyk strazdo giesmininko";
-            string expectedHeartColor = "#e40f2f";
 
-            Framework.POM.Login.ClickButtonPrisijungtiRegistruotis();
-            Framework.POM.Login.EnterElPastoAdresas(ElPastas);
-            Framework.POM.Login.EnterSlaptazodis(slaptazodis);
-            Framework.POM.Login.ClickPrisijungti();
-            Framework.POM.ProductList.EnterBookName(bookName);
-            Framework.POM.ProductList.ClickSearch();
-            Framework.POM.ProductList.ClickToBook();
-            Framework.POM.ProductList.ClickHeart();
-            string actualResult = Driver.GetRedHeart();
-            Assert.That(Driver.GetRedHeart(), Is.EqualTo(expectedHeartColor));
-            Framework.POM.ProductList.ClickHeart();
+            ProductList.EnterBookName(bookName);
+            ProductList.ClickSearch();
+            ProductList.ClickToBook();
+            ProductList.ClickHeart();
+            Assert.That(ProductList.IsHeartClicked(true), Is.EqualTo(true));
+            ProductList.ClickHeart();
+            Assert.That(ProductList.IsHeartClicked(false), Is.EqualTo(false));
         }
-
     }
 }

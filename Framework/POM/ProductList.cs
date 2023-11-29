@@ -1,15 +1,15 @@
-﻿
-
-using System;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class ProductList
     {
+        public static string GetPageTitle()
+        {
+            return Common.GetPageTitle();
+        }
+
         public static void ClickBook()
         {
-            Common.ScrollBy(0, 200);
-            System.Threading.Thread.Sleep(1000);
+            Common.WaitForElementToBeVisisble(Locators.ProductList.Book);
             Common.ClickElement(Locators.ProductList.Book);
         }
 
@@ -20,12 +20,8 @@ namespace Framework.POM
 
         public static void ClickHeart()
         {
+            Common.WaitForElementToBeVisisble(Locators.ProductList.HeartIcon);
             Common.ClickElement(Locators.ProductList.HeartIcon);
-        }
-
-        public static void ClickIeskokite()
-        {
-            Common.ClickElement(Locators.ProductList.Search);
         }
 
         public static void ClickKlasika()
@@ -53,14 +49,17 @@ namespace Framework.POM
             Common.SendKeysToElement(Locators.ProductList.InputBookName, bookName);
         }
 
-        public static string GetPirktiTitle()
+        public static bool IsHeartClicked(bool expectClicked)
         {
-            return Common.GetElement(Locators.ProductList.OutputPirktiTitle, "Pirkti");
-        }
-        public static string GetRedHeart(string expectedHeartColor)
-        {
-            return Common.GetElement(Locators.ProductList.RedHeartIcon, expectedHeartColor);
-        }
+            if (expectClicked)
+            {
+                Common.WaitForElementHtmlAttributeToContainValue(Locators.ProductList.HeartIcon, "class", "active");
+            } else
+            {
+                Common.WaitForElementHtmlAttributeToNotContainValue(Locators.ProductList.HeartIcon, "class", "active");
+            }
 
+            return Common.ElementHtmlAttributeContainsValue(Locators.ProductList.HeartIcon, "class", "active");
+        }
     }
 }

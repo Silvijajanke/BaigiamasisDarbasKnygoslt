@@ -1,12 +1,10 @@
-﻿
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     internal class Locators
     {
         internal class Login
         {
-            internal static string ButtonDeclineCookies = " //*[@class='cc-btn cc-allow']";
+            internal static string ButtonDeclineCookies = "//*[@aria-label='deny cookies']";
             internal static string PrisijungtiRegistruotis = "(//*[@class='text d-none d-lg-block'])[2]";
             internal static string InputElPastoAdresas = "//*[@id='emailInput']";
             internal static string InputSlaptazodis = "//*[@id='passwordInput']";
@@ -18,14 +16,14 @@ namespace Framework.POM
         internal class ProductList
         {
             internal static string VisosKnygos = "//*[@id='all-products']";
-            internal static string GrozineLiteratura = "(//*[@class='ico-sm-right-after'])[2]";
-            internal static string Klasika = "(//*[@href ='https://www.knygos.lt/lt/knygos/zanras/klasika/'])[2]";
-            internal static string Book = "(//*[@title='Nežudyk strazdo giesmininko'])[2]";
+            internal static string GrozineLiteratura = "//*[@id='grozine-literatura']/..";
+            internal static string Klasika = "//*[@id='filter-desktop']//*[text()='Klasika']";
+            internal static string Book = "//a[@data-cta-name='Nežudyk strazdo giesmininko']/..";
             internal static string OutputPirktiTitle = "//*[@id='add_to_cart_single_add_to_cart_book2']";
             internal static string InputBookName = "//*[@id='product-search']";
             internal static string Search = "//*[@class='ico-search']";
             internal static string ToBook = "(//*[@data-cta-product-id='15534400'])[1]";
-            internal static string HeartIcon = "(//*[@id='wishlist-action'])[2]";
+            internal static string HeartIcon = "//*[contains(@class,'single-product-wrapper')]//*[@id='wishlist-action']";
             internal static string RedHeartIcon = "(//*[@class='btn btn-outline-secondary wish-list-btn active'])[2]";
 
 
@@ -36,7 +34,7 @@ namespace Framework.POM
             internal static string SutinkuGautiBendroPobudzioLaiskus = "//*[@id='gdpr_1']";
             internal static string SutinkuGautiPasiulymusIrPaklausimus = "//*[@id='gdpr_9']";
             internal static string Prenumeruoti = "//*[@id='mc-embedded-subscribe']";
-            internal static string Advertising = "(//*[@class='close'])[1]";
+            internal static string Advertising = "//*[@id='bottom-bar']//*[@class='close']";
             internal static string OutputSubscribeTitle = "//*[@id='templateBody']/h2";
         }
         internal class SellYourBook
@@ -45,7 +43,7 @@ namespace Framework.POM
             internal static string SkaitytosKnygos = "(//*[@href='https://www.knygos.lt/user/skaitytu-knygu-pristatymas'])[2]";
             internal static string PradetiPrekyba = "//*[@href='https://www.knygos.lt/user/skaitytos-knygos-pasirinkite-pardavimo-buda']";
             internal static string Pradeti = "//*[@class='card option-button text-center']";
-            internal static string OutputSellYourBookTitle = "//*[@class='mb-lg-5 mx-lg-2 alert alert-info']";
+            internal static string OutputSellYourBookTitle = "//*[contains(@class,'alert-info')]";
 
         }
     }

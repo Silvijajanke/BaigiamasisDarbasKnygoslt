@@ -1,9 +1,4 @@
-﻿
-
-using OpenQA.Selenium;
-using System;
-
-namespace Framework.POM
+﻿namespace Framework.POM
 {
     public class Subscribe
     {
@@ -14,20 +9,15 @@ namespace Framework.POM
         
         public static void ClickButtonPrenumeruoti()
         {
-            Common.ClickElement(Locators.Subscribe.Prenumeruoti);
-            System.Threading.Thread.Sleep(1000);
-            Driver.CloseDriver();
+            Common.ScrollAndClickElement(Locators.Subscribe.Prenumeruoti);
         }
 
-        public static void CloseAdvertising()
+        public static string GetHeading()
         {
-            Common.ScrollBy(0, 6000);
-            System.Threading.Thread.Sleep(1000);
-            Common.ClickElement(Locators.Subscribe.Advertising);
-        }
-        public static string GetSubscribeTitle()
-        {
-            return Common.GetElementText(Locators.Subscribe.OutputSubscribeTitle);
+            string currentWindowHandle = Common.GetCurrentWindowHandle();
+            Common.SwitchToNewWindowFromParent(currentWindowHandle);
+
+            return Common.GetElementText("//h2");
         }
     }
 }

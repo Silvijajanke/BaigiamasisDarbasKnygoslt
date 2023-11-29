@@ -1,12 +1,26 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
+using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Framework.POM
 {
     internal class Common
     {
-        internal static IWebElement GetElement(string locator)
+        internal static void OpenPage(string url)
+        {
+            Driver.GetDriver().Url = url;
+        }
+
+        internal static string GetPageTitle()
+        {
+            return Driver.GetDriver().Title;
+        }
+
+        private static IWebElement GetElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
@@ -26,15 +40,6 @@ namespace Framework.POM
             return GetElement(locator).Text;
         }
 
-        internal static string GetLoginTitle(string getLoginTitle)
-        {
-            return GetElement(getLoginTitle).Text;
-        }
-
-        internal static string GetElement(string outputPirktiTitle, string pirkti)
-        {
-            return GetElement(outputPirktiTitle).Text;
-        }
         internal static void ScrollBy(int pixelsRight, int pixelsDown)
         {
             ExecuteJavaScript($"window.scrollBy({pixelsRight}, {pixelsDown})");
@@ -45,15 +50,74 @@ namespace Framework.POM
             Driver.GetDriver().ExecuteJavaScript(script);
         }
 
-        internal static string GetElementCssPropertyValue(string locator, string propertyName)
+        internal static void WaitForElementToBeVisisble(string locator)
         {
-            IWebElement element = GetElement(locator);
-            return element.GetCssValue(propertyName);
-        }
-        internal static string GetSellYourBookTitle(string locator)
-        {
-            return GetElement(locator).Text;
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+            wait.Until(d => d.FindElement(By.XPath(locator)));
         }
 
+        internal static bool ElementHtmlAttributeContainsValue(string locator, string attributeName, string value)
+        {
+            return GetElement(locator).GetAttribute(attributeName).Contains(value);
+        }
+
+        internal static void WaitForElementHtmlAttributeToContainValue(string locator, string attributeName, string value)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(value));
+        }
+
+        internal static void WaitForElementHtmlAttributeToNotContainValue(string locator, string attributeName, string value)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => !d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(value));
+        }
+
+        internal static void ScrollAndClickElement(string locator)
+        {
+            IWebElement element = GetElement(locator);
+
+            while (true)
+            {
+                try
+                {
+                    element.Click();
+                    break;
+                }
+                catch (ElementClickInterceptedException)
+                {
+                    ScrollBy(0, 50);
+                }
+            }
+        }
+
+        internal static string GetCurrentWindowHandle()
+        {
+            return Driver.GetDriver().CurrentWindowHandle;
+        }
+
+        internal static List<string> GetWindowHandles()
+        {
+            return Driver.GetDriver().WindowHandles.ToList();
+        }
+
+        internal static void SwitchToWindowByHandle(string handle)
+        {
+            Driver.GetDriver().SwitchTo().Window(handle);
+        }
+
+        internal static void SwitchToNewWindowFromParent(string parentWindowHandles)
+        {
+            List<string> windowHandles = GetWindowHandles();
+
+            foreach (string windowHandle in windowHandles)
+            {
+                if (windowHandle != parentWindowHandles)
+                {
+                    SwitchToWindowByHandle(windowHandle);
+                }
+            }
+        }
     }
 }
