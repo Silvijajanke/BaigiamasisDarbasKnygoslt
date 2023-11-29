@@ -20,19 +20,15 @@ namespace Tests
         [Test]
         public void QuickProductSearchAndSave()
         {
-            string ElPastas = "de141488@gmail.com";
-            string slaptazodis = "Demo881414";
             string bookName = "Nežudyk strazdo giesmininko";
-            string expectedHeartColor = "#e40f2f";
 
-            Framework.POM.ProductList.EnterBookName(bookName);
-            Framework.POM.ProductList.ClickSearch();
-            Framework.POM.ProductList.ClickToBook();
-            Framework.POM.ProductList.ClickHeart();
-            string actualResult = Framework.POM.ProductList.GetPageTitle();
-            Assert.That(Framework.POM.ProductList.GetPageTitle(), Is.EqualTo(expectedHeartColor));
-            Framework.POM.ProductList.ClickHeart();
+            ProductList.EnterBookName(bookName);
+            ProductList.ClickSearch();
+            ProductList.ClickToBook();
+            ProductList.ClickHeart();
+            Assert.That(ProductList.IsHeartClicked(true), Is.EqualTo(true));
+            ProductList.ClickHeart();
+            Assert.That(ProductList.IsHeartClicked(false), Is.EqualTo(false));
         }
-
     }
 }

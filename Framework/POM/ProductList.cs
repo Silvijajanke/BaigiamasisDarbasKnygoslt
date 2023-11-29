@@ -20,6 +20,7 @@
 
         public static void ClickHeart()
         {
+            Common.WaitForElementToBeVisisble(Locators.ProductList.HeartIcon);
             Common.ClickElement(Locators.ProductList.HeartIcon);
         }
 
@@ -46,6 +47,19 @@
         public static void EnterBookName(string bookName)
         {
             Common.SendKeysToElement(Locators.ProductList.InputBookName, bookName);
+        }
+
+        public static bool IsHeartClicked(bool expectClicked)
+        {
+            if (expectClicked)
+            {
+                Common.WaitForElementHtmlAttributeToContainValue(Locators.ProductList.HeartIcon, "class", "active");
+            } else
+            {
+                Common.WaitForElementHtmlAttributeToNotContainValue(Locators.ProductList.HeartIcon, "class", "active");
+            }
+
+            return Common.ElementHtmlAttributeContainsValue(Locators.ProductList.HeartIcon, "class", "active");
         }
     }
 }

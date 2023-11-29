@@ -23,7 +23,7 @@
             internal static string InputBookName = "//*[@id='product-search']";
             internal static string Search = "//*[@class='ico-search']";
             internal static string ToBook = "(//*[@data-cta-product-id='15534400'])[1]";
-            internal static string HeartIcon = "(//*[@id='wishlist-action'])[2]";
+            internal static string HeartIcon = "//*[contains(@class,'single-product-wrapper')]//*[@id='wishlist-action']";
             internal static string RedHeartIcon = "(//*[@class='btn btn-outline-secondary wish-list-btn active'])[2]";
 
 

@@ -53,5 +53,22 @@ namespace Framework.POM
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
             wait.Until(d => d.FindElement(By.XPath(locator)));
         }
+
+        internal static bool ElementHtmlAttributeContainsValue(string locator, string attributeName, string value)
+        {
+            return GetElement(locator).GetAttribute(attributeName).Contains(value);
+        }
+
+        internal static void WaitForElementHtmlAttributeToContainValue(string locator, string attributeName, string value)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(value));
+        }
+
+        internal static void WaitForElementHtmlAttributeToNotContainValue(string locator, string attributeName, string value)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(d => !d.FindElement(By.XPath(locator)).GetAttribute(attributeName).Contains(value));
+        }
     }
 }
