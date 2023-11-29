@@ -3,6 +3,8 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Framework.POM
 {
@@ -95,6 +97,34 @@ namespace Framework.POM
                 catch (ElementClickInterceptedException)
                 {
                     ScrollBy(0, 50);
+                }
+            }
+        }
+
+        internal static string GetCurrentWindowHandle()
+        {
+            return Driver.GetDriver().CurrentWindowHandle;
+        }
+
+        internal static List<string> GetWindowHandles()
+        {
+            return Driver.GetDriver().WindowHandles.ToList();
+        }
+
+        internal static void SwitchToWindowByHandle(string handle)
+        {
+            Driver.GetDriver().SwitchTo().Window(handle);
+        }
+
+        internal static void SwitchToNewWindowFromParent(string parentWindowHandles)
+        {
+            List<string> windowHandles = GetWindowHandles();
+
+            foreach (string windowHandle in windowHandles)
+            {
+                if (windowHandle != parentWindowHandles)
+                {
+                    SwitchToWindowByHandle(windowHandle);
                 }
             }
         }

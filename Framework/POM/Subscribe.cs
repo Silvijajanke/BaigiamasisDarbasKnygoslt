@@ -1,4 +1,6 @@
-﻿namespace Framework.POM
+﻿using System;
+
+namespace Framework.POM
 {
     public class Subscribe
     {
@@ -14,8 +16,15 @@
         
         public static void ClickButtonPrenumeruoti()
         {
-            Common.ClickElement(Locators.Subscribe.Prenumeruoti);
-            System.Threading.Thread.Sleep(1000);
+            Common.ScrollAndClickElement(Locators.Subscribe.Prenumeruoti);
+        }
+
+        public static string GetHeading()
+        {
+            string currentWindowHandle = Common.GetCurrentWindowHandle();
+            Common.SwitchToNewWindowFromParent(currentWindowHandle);
+
+            return Common.GetElementText("//h2");
         }
     }
 }

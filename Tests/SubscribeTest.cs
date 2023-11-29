@@ -9,13 +9,12 @@ namespace Tests
         [Test]
         public void SubscribeToNewsletter()
         {
-            string subscribeTitle = "Naujienlaiškių prenumerata patvirtinta";
+            string expectedResult = "Beveik baigta...";
 
-            Subscribe.EnterElPastoAdresas("test@test.com");
+            Subscribe.EnterElPastoAdresas("vartotojas@gmail.com");
             Subscribe.ClickButtonPrenumeruoti();
-
-            string actualResult = Subscribe.GetPageTitle();
-            Assert.That(Subscribe.GetPageTitle(), Is.EqualTo(subscribeTitle));
+            string actualResult = Subscribe.GetHeading();
+            Assert.That(actualResult, Is.EqualTo(expectedResult));
         }
     }
 }
